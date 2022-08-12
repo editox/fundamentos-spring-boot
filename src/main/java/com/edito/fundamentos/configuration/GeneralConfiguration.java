@@ -9,19 +9,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+//import javax.activation.DataSource;
+
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:conection.properties")
+@PropertySource("classpath:connection.properties")
 @EnableConfigurationProperties(UserPojo.class)
 public class GeneralConfiguration {
-    @Value("$jdbc.url")
+    @Value("${jdbc.url}")
     private String url;
-    @Value("$driver")
+    @Value("${driver}")
     private String driver;
-    @Value("$username")
+    @Value("${username}")
     private String username;
-    @Value("$password")
+    @Value("${password}")
     private String password;
 
     @Bean
